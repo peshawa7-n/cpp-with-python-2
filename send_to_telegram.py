@@ -7,7 +7,7 @@ API_HASH = os.getenv("API_HASH", "YOUR_API_HASH")
 BOT_TOKEN = os.getenv("BOT_TOKEN", None)
 
 # Your channel username or ID
-CHANNEL_USERNAME = os.getenv("CHANNEL_USERNAME", "your_private_channel_username")
+CHANNEL_USERNAME = os.getenv("@hadia_gull", "your_private_channel_username")
 
 video_path = "final_output.mp4"
 
@@ -15,7 +15,7 @@ video_path = "final_output.mp4"
 client = TelegramClient("session_name", API_ID, API_HASH)
 
 async def main():
-    print("Sending video to Telegram...")
+    print(f"Sending {video_path} video to Telegram...")
     await client.send_file(CHANNEL_USERNAME, video_path, caption="Here is the edited video")
     print("Video sent successfully!")
 
